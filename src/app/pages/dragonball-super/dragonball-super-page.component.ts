@@ -1,5 +1,6 @@
 import { NgClass } from "@angular/common";
 import { ChangeDetectionStrategy, Component, computed, signal } from "@angular/core";
+import { CharacterListComponent } from "../../components/dragonball/character-list/character-list.component";
 
 interface Character {
     id: number;
@@ -8,18 +9,19 @@ interface Character {
 }
 
 @Component({
-    templateUrl: './dragonball-page.component.html',
-    styles: ``,
-    imports: [NgClass],
+    templateUrl: './dragonball-super-page.component.html',
+    selector: 'dragonball-super',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [CharacterListComponent],
 })
-export class DragonballPageComponent {
+export class DragonballSuperPageComponent {
 
     characterName = signal('');
     characterPower = signal(0);
 
     personajes = signal<Character[]>([
         {id: 1, name: 'Goku', power: 9001 },
+        {id: 2, name: 'Vegeta', power: 8000 },
     ]);
 
     powerClasses = computed(() => {
