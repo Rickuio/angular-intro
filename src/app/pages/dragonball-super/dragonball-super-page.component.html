@@ -3,16 +3,12 @@
 
 <section class="row">
     <div class="col-12 col-sm-6">
-        <h3>Agregar: {{ characterName() }}</h3>
-        <input type="text" class="form-control" placeholder="Nombre" 
-            [value]="characterName()" (change)="characterName.set(txtName.value)" #txtName
-        >
-        <input type="number" class="form-control mt-2" placeholder="Poder"
-            [value]="characterPower()" (change)="characterPower.set(+txtPower.value)" #txtPower
-        >
-        <button class="mt-2 btn btn-primary" (click)="addCharacter()">Agregar</button>
+        <dragonball-character-add (newCharacter)="dragonballService.addCharacter($event)" />
     </div>
     <div class="col-12 col-sm-6">
-        <dragonball-character-list [personajes]="personajes()" />
+        <dragonball-character-list 
+            [personajes]="dragonballService.personajes()" 
+            listName="Listado de personajes"
+        />
     </div>
 </section>
