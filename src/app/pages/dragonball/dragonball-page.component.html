@@ -19,7 +19,10 @@
                 @if ( character.power > 1000) {
                     <li>
                     <span>{{ idx + 1 }} - {{ character.name }}</span>
-                    <span [class.text-danger]="character.power > 9000" [class.text-primary]="character.power <= 9000" >
+                    <span 
+                        [class.text-danger]="character.power > 9000" 
+                        [class.text-primary]="character.power <= 9000"
+                    >
                         ({{ character.power }})
                     </span>
                     <span [ngClass]="powerClasses()">
