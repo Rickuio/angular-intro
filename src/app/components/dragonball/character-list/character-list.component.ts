@@ -8,6 +8,6 @@ import type { Character } from '../../../interfaces/character.interface';
 export class CharacterListComponent {
 
   personajes = input.required<Character[]>();
-  listName = input.required<string>();
+  tituloListado = input.required<string>();
 
 }

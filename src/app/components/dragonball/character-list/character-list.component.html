@@ -1,4 +1,4 @@
-<h3>{{ listName() }}</h3>
+<h3>{{ tituloListado() }}</h3>
 <ul>
     @for (character of personajes(); track character.id; let idx = $index) {
         @if ( character.power > 1000) {
