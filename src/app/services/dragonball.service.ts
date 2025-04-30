@@ -16,15 +16,15 @@ export class DragonballService {
     ]);
     */
 
-    personajes = signal<Character[]>(loadFromLocalStorage());
+    personajesSrv = signal<Character[]>(loadFromLocalStorage());
 
     saveToLocalStorage = effect( () => {
-        console.log(`Character count ${this.personajes().length}`)
-        localStorage.setItem('characters', JSON.stringify(this.personajes()));
+        console.log(`Character count ${this.personajesSrv().length}`)
+        localStorage.setItem('characters', JSON.stringify(this.personajesSrv()));
     });
 
     addCharacterSrv(character: Character) {
-        this.personajes.update(
+        this.personajesSrv.update(
             (list) => [...list, character]
         );
     }
