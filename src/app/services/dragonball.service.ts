@@ -23,7 +23,7 @@ export class DragonballService {
         localStorage.setItem('characters', JSON.stringify(this.personajes()));
     });
 
-    addCharacter(character: Character) {
+    addCharacterSrv(character: Character) {
         this.personajes.update(
             (list) => [...list, character]
         );

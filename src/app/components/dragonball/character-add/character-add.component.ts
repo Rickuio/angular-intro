@@ -16,12 +16,12 @@ export class CharacterAddComponent {
     if ( !this.characterName() || this.characterPower() <= 0) {
         return;
     }
-    const newCharacter: Character = {
+    const character: Character = {
         id: Math.floor(Math.random() * 1000),
         name: this.characterName(),
         power: this.characterPower(),
     }
-    this.newCharacter.emit(newCharacter);
+    this.newCharacter.emit(character);
     this.resetCharacter();
   }
   

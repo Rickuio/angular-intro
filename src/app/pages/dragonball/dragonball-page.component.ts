@@ -15,6 +15,7 @@ interface Character {
 })
 export class DragonballPageComponent {
 
+    title = 'Dragon Ball 👾';
     characterName = signal('');
     characterPower = signal(0);
 
