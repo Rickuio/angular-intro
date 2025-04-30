@@ -9,12 +9,6 @@ const loadFromLocalStorage = (): Character[] => {
 
 @Injectable({ providedIn: 'root'})
 export class DragonballService {
-    /*
-    personajes = signal<Character[]>([
-        {id: 1, name: 'Goku', power: 9001 },
-        {id: 2, name: 'Vegeta', power: 8000 },
-    ]);
-    */
 
     personajesSrv = signal<Character[]>(loadFromLocalStorage());
 
@@ -24,9 +18,7 @@ export class DragonballService {
     });
 
     addCharacterSrv(character: Character) {
-        this.personajesSrv.update(
-            (list) => [...list, character]
-        );
+        this.personajesSrv.update( (list) => [...list, character] );
     }
 
 }
