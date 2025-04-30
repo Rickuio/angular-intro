@@ -4,11 +4,11 @@
 <section class="row">
     <div class="col-12 col-sm-6">
         <h3>Agregar: {{ characterName() }}</h3>
-        <input type="text" class="form-control" placeholder="Nombre" 
-            [value]="characterName()" (change)="characterName.set(txtName.value)" #txtName
+        <input type="text" class="form-control" placeholder="Nombre" #txtName
+            [value]="characterName()" (input)="characterName.set(txtName.value)" 
         >
-        <input type="number" class="form-control mt-2" placeholder="Poder"
-            [value]="characterPower()" (change)="characterPower.set(+txtPower.value)" #txtPower
+        <input type="number" class="form-control mt-2" placeholder="Poder" #txtPower
+            [value]="characterPower()" (change)="characterPower.set(+txtPower.value)" 
         >
         <button class="mt-2 btn btn-primary" (click)="addCharacter()">Agregar</button>
     </div>
